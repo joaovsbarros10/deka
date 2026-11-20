@@ -1,0 +1,58 @@
+/*
+ * Tokens de design da DEKA (seção 8), recalculados a partir do rosa da logo (#E42A5C).
+ * Contrastes (WCAG): texto branco sobre --deka-pink-faixa 4,96:1; sobre --deka-pink-ink 6,51:1;
+ * --deka-ink sobre --deka-bg 15,6:1; --deka-ink-muted sobre branco 6,56:1.
+ * O rosa da logo (4,39:1 com branco) fica só para formas grandes e decoração.
+ */
+
+/* Símbolos ∈ ∉ ⊂ ⊄ ⊃ ⊆ ∪ ∩ − ∅: subconjunto da DejaVu Sans, hospedado no próprio site (RNF-09). */
+@font-face {
+  font-family: 'Deka Simbolos';
+  src: url('../assets/fontes/deka-simbolos.woff2') format('woff2');
+  font-weight: 100 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+2205, U+2208-2209, U+2212, U+2229-222A, U+2282-2284, U+2286;
+}
+@font-face {
+  font-family: 'Deka Simbolos';
+  src: url('../assets/fontes/deka-simbolos-Bold.woff2') format('woff2');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+2205, U+2208-2209, U+2212, U+2229-222A, U+2282-2284, U+2286;
+}
+
+:root {
+  --deka-pink: #e42a5c;
+  --deka-pink-faixa: #d81e54;
+  --deka-pink-ink: #b8124b;
+  --deka-pink-ink-forte: #9a0d3e;
+  --deka-pink-soft: #ffe3ee;
+  --deka-pink-claro: #ffd3e0;
+  --deka-wine: #8c0a3e;
+  --deka-graphite: #262626;
+  --deka-graphite-2: #1b1b1b;
+  --deka-bg: #fff6f9;
+  --deka-surface: #ffffff;
+  --deka-ink: #1e1e26;
+  --deka-ink-muted: #5b5d66;
+  --deka-line: #e3e4e6;
+  --deka-indigo: #3d3db8;
+  --deka-ok: #0b6b3a;
+  --deka-ok-bg: #e6f6ec;
+  --deka-warn: #8a4200;
+  --deka-warn-bg: #fff1de;
+
+  --fonte: 'Deka Simbolos', 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Cambria Math',
+    'STIX Two Math', 'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Math', sans-serif;
+
+  --raio-cartao: 16px;
+  --raio-botao: 12px;
+  --sombra: 0 1px 2px rgb(30 30 38 / 0.05), 0 6px 20px rgb(30 30 38 / 0.07);
+  --sombra-forte: 0 12px 40px rgb(30 30 38 / 0.18);
+  --foco: var(--deka-ink);
+  --altura-cabecalho: 64px;
+  --t-rapida: 160ms;
+  --t-media: 240ms;
+}

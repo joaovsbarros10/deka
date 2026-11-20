@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+.claude/
+.vercel/
+# arquivos originais enviados (a versão usada pelo site está em public/)
+/deka-palavra-conjuntos.png
+/mascote-deka.png
+/voice_preview_dekinha.mp3
+/*.pdf

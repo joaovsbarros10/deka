@@ -1,0 +1,438 @@
+/* Base, tipografia, faixas, botões, pílulas, cartões, cabeçalho e rodapé. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--altura-cabecalho) + 16px);
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--deka-ink);
+  background: var(--deka-surface);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+}
+
+[tabindex='-1']:focus {
+  outline: none;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pular {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: var(--raio-botao);
+  border: 0;
+  background: var(--deka-ink);
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+}
+.pular:focus {
+  top: 12px;
+}
+
+.app {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.principal {
+  flex: 1;
+}
+.principal:focus {
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 28px;
+  }
+}
+
+.centro {
+  text-align: center;
+}
+
+/* ---------- Faixas de cor (linguagem visual da referência) ---------- */
+.faixa {
+  padding-block: clamp(44px, 6vw, 80px);
+}
+.faixa--rosa {
+  background: var(--deka-pink-faixa);
+  color: #fff;
+  --foco: #fff;
+}
+.faixa--vinho {
+  background: var(--deka-wine);
+  color: #fff;
+  --foco: #fff;
+}
+.faixa--grafite {
+  background: var(--deka-graphite);
+  color: #fff;
+  --foco: #fff;
+}
+.faixa--blush {
+  background: var(--deka-bg);
+}
+.faixa--branca {
+  background: var(--deka-surface);
+}
+
+.faixa h2 {
+  font-size: clamp(27px, 3.4vw, 38px);
+}
+.titulo-rosa {
+  color: var(--deka-pink-ink);
+}
+.subtitulo {
+  margin: 12px auto 0;
+  max-width: 44em;
+  color: var(--deka-ink-muted);
+  font-size: 18px;
+}
+.subtitulo--claro {
+  color: #e9e9ee;
+}
+
+.selo {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.selo--claro {
+  color: var(--deka-pink-claro);
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: var(--raio-botao);
+  border: 2px solid transparent;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--t-rapida),
+    color var(--t-rapida),
+    border-color var(--t-rapida),
+    transform var(--t-rapida);
+}
+.botao .icone {
+  flex: none;
+}
+[data-movimento='ligado'] .botao:not(:disabled):active {
+  transform: translateY(1px) scale(0.99);
+}
+.botao:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.botao--grande {
+  min-height: 56px;
+  padding: 14px 26px;
+  font-size: 16px;
+}
+.botao--compacto {
+  min-height: 44px;
+  padding: 8px 14px;
+  font-size: 14px;
+}
+.botao--primario {
+  background: var(--deka-pink-ink);
+  color: #fff;
+}
+.botao--primario:hover:not(:disabled) {
+  background: var(--deka-pink-ink-forte);
+}
+.botao--claro {
+  background: #fff;
+  color: var(--deka-ink);
+}
+.botao--claro:hover:not(:disabled) {
+  background: var(--deka-pink-soft);
+}
+.botao--escuro {
+  background: var(--deka-graphite);
+  color: #fff;
+}
+.botao--escuro:hover:not(:disabled) {
+  background: #000;
+}
+.botao--contorno {
+  background: transparent;
+  color: var(--deka-ink);
+  border-color: var(--deka-ink);
+}
+.botao--contorno:hover:not(:disabled) {
+  background: rgb(30 30 38 / 0.06);
+}
+.botao--contorno-claro {
+  background: transparent;
+  color: #fff;
+  border-color: rgb(255 255 255 / 0.9);
+}
+.botao--contorno-claro:hover:not(:disabled) {
+  background: rgb(255 255 255 / 0.12);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+.acoes--centro {
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* ---------- Pílulas e cartões ---------- */
+.pilulas {
+  list-style: none;
+  padding: 0;
+  margin: 28px auto 0;
+  max-width: 920px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.pilula {
+  border: 1.5px solid rgb(255 255 255 / 0.9);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cartao {
+  background: var(--deka-surface);
+  border-radius: var(--raio-cartao);
+  border: 1px solid #f3e4ea;
+  box-shadow: var(--sombra);
+  padding: clamp(16px, 2.6vw, 28px);
+}
+
+.cartoes-simbolo {
+  list-style: none;
+  padding: 0;
+  margin: 32px auto 0;
+  max-width: 1040px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  text-align: left;
+}
+.cartao-simbolo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 200px;
+  padding: 18px 18px 20px;
+  background: #fff;
+  border: 1px solid var(--deka-line);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+}
+.cartao-simbolo__glifo {
+  font-size: 68px;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--deka-wine);
+  margin-bottom: auto;
+  padding-bottom: 18px;
+}
+.cartao-simbolo__nome {
+  font-size: 20px;
+  line-height: 1.2;
+}
+.cartao-simbolo__texto {
+  font-size: 15px;
+  color: var(--deka-ink-muted);
+  line-height: 1.4;
+}
+.cartoes-simbolo--rever .cartao-simbolo .botao {
+  margin-top: 14px;
+  align-self: flex-start;
+}
+
+.formula {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: var(--deka-pink-soft);
+  color: var(--deka-ink);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.35;
+}
+.formula--suave {
+  background: #ececff;
+}
+.formula--grande {
+  font-size: 22px;
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgb(255 255 255 / 0.97);
+  border-bottom: 1px solid var(--deka-line);
+  backdrop-filter: saturate(1.4) blur(8px);
+}
+.cabecalho__linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: var(--altura-cabecalho);
+}
+.cabecalho__marca {
+  display: inline-flex;
+  border-radius: 8px;
+}
+.cabecalho__marca img {
+  display: block;
+  height: 34px;
+  width: auto;
+}
+.controles {
+  display: flex;
+  gap: 8px;
+}
+.alternancia {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--deka-line);
+  background: #fff;
+  color: var(--deka-ink-muted);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background-color var(--t-rapida),
+    color var(--t-rapida),
+    border-color var(--t-rapida);
+}
+.alternancia[aria-pressed='true'] {
+  background: var(--deka-pink-soft);
+  border-color: var(--deka-pink-ink);
+  color: var(--deka-pink-ink);
+}
+@media (max-width: 400px) {
+  .cabecalho__marca img {
+    height: 28px;
+  }
+  .alternancia {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  background: var(--deka-graphite-2);
+  color: #e6e6ea;
+  --foco: #fff;
+  padding-block: 28px;
+  font-size: 15px;
+}
+.rodape__linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+.rodape__logo {
+  height: 28px;
+  width: auto;
+}
+.rodape p {
+  max-width: 62ch;
+}
+
+/* ---------- Ícone ---------- */
+.icone {
+  display: inline-block;
+  vertical-align: middle;
+}

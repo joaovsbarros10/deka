@@ -1,0 +1,270 @@
+/* Diagrama de Venn, legendas e quadro de símbolos. */
+.recurso {
+  margin: 0;
+}
+.recurso--comparar {
+  display: grid;
+  gap: 18px;
+}
+.recurso__secundario {
+  justify-self: center;
+  width: min(100%, 380px);
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--deka-bg);
+}
+.recurso__legendas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.venn-caixa {
+  width: 100%;
+}
+.venn {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  max-width: 620px;
+  overflow: visible;
+}
+.venn--retrato {
+  max-width: 380px;
+}
+.venn--mini {
+  max-width: 340px;
+}
+.venn text {
+  font-family: var(--fonte);
+  font-weight: 700;
+  font-size: 16px;
+  fill: var(--deka-ink);
+}
+
+.venn__fundo--a {
+  fill: rgb(228 42 92 / 0.07);
+}
+.venn__fundo--b {
+  fill: rgb(61 61 184 / 0.06);
+}
+.venn__fundo--c {
+  fill: rgb(140 10 62 / 0.05);
+}
+.venn__realce {
+  fill: var(--deka-pink);
+  fill-opacity: 0.34;
+}
+.venn__borda {
+  fill: none;
+  stroke-width: 3;
+}
+.venn__borda--a {
+  stroke: var(--deka-pink-ink);
+}
+.venn__borda--b {
+  stroke: var(--deka-indigo);
+  stroke-dasharray: 11 7;
+}
+.venn__borda--c {
+  stroke: var(--deka-wine);
+  stroke-dasharray: 2 7;
+  stroke-linecap: round;
+  stroke-width: 3.5;
+}
+.venn__borda--forte {
+  stroke-width: 5.5;
+}
+.venn .venn__rotulo {
+  font-size: 28px;
+  font-weight: 800;
+}
+.venn .venn__rotulo--a {
+  fill: var(--deka-pink-ink);
+}
+.venn .venn__rotulo--b {
+  fill: var(--deka-indigo);
+}
+.venn .venn__rotulo--c {
+  fill: var(--deka-wine);
+}
+
+.venn__chip rect {
+  fill: #fff;
+  stroke: #d5d6da;
+  stroke-width: 1.5;
+}
+.venn__chip--ativo > rect {
+  fill: var(--deka-pink-ink);
+  stroke: var(--deka-pink-ink);
+}
+.venn .venn__chip--ativo > text {
+  fill: #fff;
+}
+.venn__chip--apagado {
+  opacity: 0.42;
+}
+.venn__chip--alerta > rect {
+  fill: var(--deka-warn-bg);
+  stroke: var(--deka-warn);
+  stroke-width: 2;
+}
+.venn .venn__chip--alerta > text {
+  fill: var(--deka-warn);
+}
+.venn__chip--fora > rect {
+  stroke: var(--deka-ink-muted);
+  stroke-dasharray: 5 4;
+}
+.venn__chip--lista > rect {
+  fill: var(--deka-pink-soft);
+  stroke: var(--deka-pink-ink);
+}
+
+.venn__etiqueta rect {
+  fill: #fff;
+  stroke-width: 1.5;
+}
+.venn .venn__etiqueta text {
+  font-size: 14px;
+  font-weight: 800;
+}
+.venn__etiqueta--neutra rect {
+  stroke: #c9cad0;
+}
+.venn .venn__etiqueta--neutra text {
+  fill: var(--deka-ink-muted);
+  font-weight: 700;
+}
+.venn__etiqueta--sim rect {
+  stroke: var(--deka-pink-ink);
+  fill: var(--deka-pink-soft);
+}
+.venn .venn__etiqueta--sim text {
+  fill: var(--deka-pink-ink-forte);
+}
+.venn__etiqueta--nao rect {
+  stroke: var(--deka-warn);
+  fill: var(--deka-warn-bg);
+}
+.venn .venn__etiqueta--nao text {
+  fill: var(--deka-warn);
+}
+
+.venn__ligacao {
+  stroke: var(--deka-pink-ink);
+  stroke-width: 2;
+  stroke-dasharray: 4 5;
+}
+.venn .venn__legenda {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 15px;
+  fill: var(--deka-ink-muted);
+}
+.venn .venn__simbolo {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* ---------- Quadro de símbolos ---------- */
+.quadro {
+  margin: 0;
+}
+.quadro__titulo {
+  font-weight: 800;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+.quadro__rolagem {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.quadro table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 17px;
+}
+.quadro th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--deka-ink-muted);
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--deka-line);
+  white-space: nowrap;
+}
+.quadro td {
+  padding: 12px;
+  border-bottom: 1px solid var(--deka-line);
+  vertical-align: middle;
+  line-height: 1.4;
+}
+.quadro__mat {
+  font-weight: 800;
+  font-size: 19px;
+  white-space: nowrap;
+}
+.quadro__linha--errado td {
+  background: #fffaf3;
+}
+.quadro__linha--errado td:first-child {
+  color: var(--deka-warn);
+}
+.quadro__selo {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: -6px;
+}
+.quadro__selo--certo {
+  background: var(--deka-ok-bg);
+  color: var(--deka-ok);
+}
+.quadro__selo--errado {
+  background: var(--deka-warn-bg);
+  color: var(--deka-warn);
+}
+.quadro__nota {
+  margin-top: 14px;
+  font-size: 16px;
+  color: var(--deka-ink-muted);
+}
+@media (max-width: 560px) {
+  .quadro table,
+  .quadro tbody,
+  .quadro tr,
+  .quadro td {
+    display: block;
+  }
+  .quadro thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .quadro tr {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--deka-line);
+  }
+  .quadro td {
+    border: 0;
+    padding: 2px 4px;
+  }
+  .quadro td:first-child {
+    font-size: 19px;
+  }
+  .quadro td:not(:first-child) {
+    color: var(--deka-ink-muted);
+    font-size: 16px;
+  }
+}
