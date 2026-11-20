@@ -9,3 +9,6 @@ dist/
 /mascote-deka.png
 /voice_preview_dekinha.mp3
 /*.pdf
+
+.vercel
+.env*
